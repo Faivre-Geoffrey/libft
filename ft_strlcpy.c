@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gefaivre <gefaivre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/09 09:53:41 by gefaivre          #+#    #+#             */
-/*   Updated: 2020/11/20 09:43:04 by gefaivre         ###   ########.fr       */
+/*   Created: 2020/11/21 09:38:15 by gefaivre          #+#    #+#             */
+/*   Updated: 2020/11/21 10:02:31 by gefaivre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_putstr(char *str)
+size_t	ft_strlcpy(char *dst, const char *src, size_t n);
 {
-	int i;
+	size_t i;
+	
+	i = -1;
 
-	i = 0;
-	while (str[i])
-	{
-		ft_putchar(str[i]);
-		i++;
-	}
+	while (src[++i] && i < n - 1)
+		dst[i] = src[i];
+	dest[i] = '\n';
+	return (i);
 }

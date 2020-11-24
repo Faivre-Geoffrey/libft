@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gefaivre <gefaivre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/09 09:53:41 by gefaivre          #+#    #+#             */
-/*   Updated: 2020/11/20 09:43:04 by gefaivre         ###   ########.fr       */
+/*   Created: 2020/11/20 11:40:17 by gefaivre          #+#    #+#             */
+/*   Updated: 2020/11/20 11:48:00 by gefaivre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_putstr(char *str)
+int toupper(int c)
 {
-	int i;
-
-	i = 0;
-	while (str[i])
-	{
-		ft_putchar(str[i]);
-		i++;
-	}
+	if (c <= 'a' && c >= 'z')
+		return (c - 32);
+	return (c);
 }

@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gefaivre <gefaivre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/09 09:53:41 by gefaivre          #+#    #+#             */
-/*   Updated: 2020/11/20 09:43:04 by gefaivre         ###   ########.fr       */
+/*   Created: 2020/11/24 11:21:38 by gefaivre          #+#    #+#             */
+/*   Updated: 2020/11/24 11:21:52 by gefaivre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char *str)
+char	*ft_strdup(const char *s)
 {
-	int i;
+	int		len;
+	char	*scop;
 
-	i = 0;
-	while (str[i])
+	len = ((ft_strlen(s)) + 1);
+	if ((scop = ((char*)malloc(sizeof(char) * len))))
 	{
-		ft_putchar(str[i]);
-		i++;
+		ft_strcpy(scop, s);
+		return (scop);
 	}
+	return (NULL);
 }

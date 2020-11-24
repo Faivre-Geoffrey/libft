@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gefaivre <gefaivre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/09 09:53:41 by gefaivre          #+#    #+#             */
-/*   Updated: 2020/11/20 09:43:04 by gefaivre         ###   ########.fr       */
+/*   Created: 2020/11/24 11:20:24 by gefaivre          #+#    #+#             */
+/*   Updated: 2020/11/24 11:20:30 by gefaivre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char *str)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	int i;
+	void	*result;
+	size_t	i;
 
 	i = 0;
-	while (str[i])
+	if (nmemb == 0 || size == 0)
+		return (NULL);
+	result = malloc(size * nmemb);
+	while (i <= nmemb)
 	{
-		ft_putchar(str[i]);
+		((char*)result)[i] = 0;
 		i++;
 	}
+	return (result);
 }

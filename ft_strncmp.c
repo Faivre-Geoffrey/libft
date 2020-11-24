@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gefaivre <gefaivre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/09 09:53:41 by gefaivre          #+#    #+#             */
-/*   Updated: 2020/11/20 09:43:04 by gefaivre         ###   ########.fr       */
+/*   Created: 2020/11/21 09:22:30 by gefaivre          #+#    #+#             */
+/*   Updated: 2020/11/21 09:36:59 by gefaivre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_putstr(char *str)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	int i;
 
 	i = 0;
-	while (str[i])
+
+	while (s1[i] && s2[i] && i < n)
 	{
-		ft_putchar(str[i]);
+		if (s1[i] != s2[i])
+			return (s1_c[i] - s2_c[i]);
 		i++;
 	}
+	return (0);
 }
