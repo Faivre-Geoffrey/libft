@@ -6,24 +6,26 @@
 /*   By: gefaivre <gefaivre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 09:09:27 by gefaivre          #+#    #+#             */
-/*   Updated: 2020/11/12 10:54:41 by gefaivre         ###   ########.fr       */
+/*   Updated: 2020/11/25 10:19:25 by gefaivre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void * memccpy (void *destination, const void * source, int c, size_t size)
+#include "libft.h"
+
+void *ft_memccpy(void *dest, const void *src, int c, size_t size)
 {
 	unsigned int i;
 	char *d_c;
 	char *s_c;
 
 	i = 0;
-	d_c = (char *)destination;
-	s_c = (char *)source;
+	d_c = (char *)dest;
+	s_c = (char *)src;
 
 	while (i < size)
 	{
 		d_c[i] = s_c[i];
-		if (d_c == (unsigned char)c)
+		if (d_c[i] == (char)c)
 		{
 			return (d_c + i + 1);
 		}

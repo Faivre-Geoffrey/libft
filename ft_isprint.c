@@ -6,11 +6,11 @@
 /*   By: gefaivre <gefaivre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/08 11:25:43 by gefaivre          #+#    #+#             */
-/*   Updated: 2020/11/08 11:28:23 by gefaivre         ###   ########.fr       */
+/*   Updated: 2020/11/25 08:30:02 by gefaivre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint (char c)
+int	ft_isprint(char c)
 {
 	if (c >= 32 && c <= 126)
 		return (1);

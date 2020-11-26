@@ -6,9 +6,11 @@
 /*   By: geoffrey <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/08 09:02:11 by geoffrey          #+#    #+#             */
-/*   Updated: 2020/11/08 09:32:38 by geoffrey         ###   ########.fr       */
+/*   Updated: 2020/11/25 10:38:50 by gefaivre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void *ft_memset (void *s, int c, size_t n)
 {
@@ -22,5 +24,5 @@ void *ft_memset (void *s, int c, size_t n)
 		mem_s[i++] = (unsigned char)c;
 		n--;
 	}
-	return (mem_s)
+	return (mem_s);
 }

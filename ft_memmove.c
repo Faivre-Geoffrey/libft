@@ -6,7 +6,7 @@
 /*   By: gefaivre <gefaivre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 10:43:13 by gefaivre          #+#    #+#             */
-/*   Updated: 2020/11/19 17:23:23 by gefaivre         ###   ########.fr       */
+/*   Updated: 2020/11/25 10:22:22 by gefaivre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		return (NULL);
 	if (src < dest)
 	{
-		while (n < 0)
+		while (n > 0)
 		{
-			dest_c[len] = src_c[len];
-			len--;
+			dest_c[n] = src_c[n];
+			n--;
 		}
 	}
 	else

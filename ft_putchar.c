@@ -6,12 +6,13 @@
 /*   By: geoffrey <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/08 10:12:01 by geoffrey          #+#    #+#             */
-/*   Updated: 2020/11/08 10:16:26 by geoffrey         ###   ########.fr       */
+/*   Updated: 2020/11/25 08:31:03 by gefaivre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <unistd.h>
 
-void ft_putchar(char c)
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }

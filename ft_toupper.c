@@ -6,11 +6,11 @@
 /*   By: gefaivre <gefaivre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 11:40:17 by gefaivre          #+#    #+#             */
-/*   Updated: 2020/11/20 11:48:00 by gefaivre         ###   ########.fr       */
+/*   Updated: 2020/11/25 08:30:17 by gefaivre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int toupper(int c)
+int	toupper(int c)
 {
 	if (c <= 'a' && c >= 'z')
 		return (c - 32);

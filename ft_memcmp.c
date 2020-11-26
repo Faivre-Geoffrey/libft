@@ -6,11 +6,13 @@
 /*   By: gefaivre <gefaivre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 11:31:51 by gefaivre          #+#    #+#             */
-/*   Updated: 2020/11/20 11:39:50 by gefaivre         ###   ########.fr       */
+/*   Updated: 2020/11/25 09:43:46 by gefaivre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n);
+#include "libft.h"
+
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t i;
 	unsigned char *s1_c;

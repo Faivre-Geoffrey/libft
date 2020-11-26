@@ -6,17 +6,19 @@
 /*   By: gefaivre <gefaivre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 19:47:43 by gefaivre          #+#    #+#             */
-/*   Updated: 2020/11/20 21:04:42 by gefaivre         ###   ########.fr       */
+/*   Updated: 2020/11/25 10:09:49 by gefaivre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *strchr(const char *str, int c)
+#include "libft.h"
+
+char	*ft_strchr(const char *str, int c)
 {
 	int i;
-	unsigned char *str_c;
+	char *str_c;
 
 	i = 0;
-	str_c = (unsigned char*)str;
+	str_c = (char*)str;
 
 	while (str_c[i])
 	{

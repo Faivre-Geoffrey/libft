@@ -6,11 +6,13 @@
 /*   By: geoffrey <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/08 08:42:39 by geoffrey          #+#    #+#             */
-/*   Updated: 2020/11/21 11:02:42 by gefaivre         ###   ########.fr       */
+/*   Updated: 2020/11/25 10:31:39 by gefaivre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(char* str)
+#include "libft.h"
+
+int ft_strlen(const char* str)
 {
 	int i;
 	i = 0;

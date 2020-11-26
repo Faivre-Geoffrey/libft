@@ -6,13 +6,11 @@
 /*   By: gefaivre <gefaivre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/11 08:59:11 by gefaivre          #+#    #+#             */
-/*   Updated: 2020/11/11 11:14:21 by gefaivre         ###   ########.fr       */
+/*   Updated: 2020/11/25 10:13:29 by gefaivre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 void ft_bzero(void *s, size_t n)
 {
@@ -27,21 +25,3 @@ void ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-
-int main()
-
-	char s1[] = "bonjourjesuisgentil";
-	char s2[] = "bonjourjesuisgentil";
-	int nb = 5 ;
-
-		ft_bzero(s1, nb);
-		bzero(s2, nb);
-
-
-		printf("mine = %s\n", s1);
-		printf("pc = %s\n", s2);
-
-	return (0);
-}
-
-

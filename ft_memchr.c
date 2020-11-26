@@ -6,9 +6,11 @@
 /*   By: gefaivre <gefaivre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 11:19:03 by gefaivre          #+#    #+#             */
-/*   Updated: 2020/11/20 11:31:48 by gefaivre         ###   ########.fr       */
+/*   Updated: 2020/11/25 10:37:47 by gefaivre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memchr(const void *src, int c, size_t n)
 {
