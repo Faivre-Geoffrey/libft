@@ -6,14 +6,13 @@
 /*   By: gefaivre <gefaivre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 08:20:59 by gefaivre          #+#    #+#             */
-/*   Updated: 2020/11/25 10:24:47 by gefaivre         ###   ########.fr       */
+/*   Updated: 2020/11/28 09:56:23 by gefaivre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-void	ft_putnbr_fd (int nb, int fd)
+void	ft_putnbr_fd(int nb, int fd)
 {
 	unsigned int nbr;
 
@@ -21,11 +20,11 @@ void	ft_putnbr_fd (int nb, int fd)
 	if (nb < 0)
 	{
 		ft_putchar_fd('-', fd);
-		nbr = nbr * -1;
+		nbr = nb * -1;
 	}
-	nbr = nb;
+	else
+		nbr = nb;
 	if (nbr >= 10)
 		ft_putnbr_fd(nbr / 10, fd);
 	ft_putchar_fd((nbr % 10) + '0', fd);
 }
-

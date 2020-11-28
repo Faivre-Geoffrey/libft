@@ -6,7 +6,7 @@
 /*   By: gefaivre <gefaivre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 11:31:51 by gefaivre          #+#    #+#             */
-/*   Updated: 2020/11/25 09:43:46 by gefaivre         ###   ########.fr       */
+/*   Updated: 2020/11/28 10:03:00 by gefaivre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,13 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t i;
-	unsigned char *s1_c;
-	unsigned char *s2_c;
+	size_t			i;
+	unsigned char	*s1_c;
+	unsigned char	*s2_c;
 
 	i = 0;
 	s1_c = (unsigned char*)s1;
 	s2_c = (unsigned char*)s2;
-
 	while (i < n)
 	{
 		if (s1_c[i] != s2_c[i])
@@ -29,5 +28,4 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		i++;
 	}
 	return (0);
-
 }

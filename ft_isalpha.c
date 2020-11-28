@@ -6,15 +6,14 @@
 /*   By: geoffrey <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/08 10:28:32 by geoffrey          #+#    #+#             */
-/*   Updated: 2020/11/25 10:06:13 by gefaivre         ###   ########.fr       */
+/*   Updated: 2020/11/28 09:50:06 by gefaivre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha (char c)
+int	ft_isalpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);
 	else
 		return (0);
-	
 }

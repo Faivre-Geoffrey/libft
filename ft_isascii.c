@@ -6,13 +6,13 @@
 /*   By: gefaivre <gefaivre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/08 10:57:02 by gefaivre          #+#    #+#             */
-/*   Updated: 2020/11/25 10:14:54 by gefaivre         ###   ########.fr       */
+/*   Updated: 2020/11/28 09:22:57 by gefaivre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii (char c)
+int	ft_isascii(int c)
 {
-	if (c >= 0 && c <= 126)
+	if (c >= 0 && c <= 127)
 		return (1);
 	else
 		return (0);

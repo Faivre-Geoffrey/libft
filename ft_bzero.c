@@ -6,16 +6,16 @@
 /*   By: gefaivre <gefaivre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/11 08:59:11 by gefaivre          #+#    #+#             */
-/*   Updated: 2020/11/25 10:13:29 by gefaivre         ###   ########.fr       */
+/*   Updated: 2020/11/28 09:51:20 by gefaivre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	unsigned int	i;
-	char	*s_c;
+	char			*s_c;
 
 	s_c = (char *)s;
 	i = 0;

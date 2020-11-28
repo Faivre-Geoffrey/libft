@@ -6,22 +6,21 @@
 /*   By: gefaivre <gefaivre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 09:09:27 by gefaivre          #+#    #+#             */
-/*   Updated: 2020/11/25 10:19:25 by gefaivre         ###   ########.fr       */
+/*   Updated: 2020/11/28 09:48:04 by gefaivre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memccpy(void *dest, const void *src, int c, size_t size)
+void	*ft_memccpy(void *dest, const void *src, int c, size_t size)
 {
-	unsigned int i;
-	char *d_c;
-	char *s_c;
+	size_t		i;
+	char		*d_c;
+	char		*s_c;
 
 	i = 0;
 	d_c = (char *)dest;
 	s_c = (char *)src;
-
 	while (i < size)
 	{
 		d_c[i] = s_c[i];
@@ -32,5 +31,4 @@ void *ft_memccpy(void *dest, const void *src, int c, size_t size)
 		i++;
 	}
 	return (NULL);
-
 }

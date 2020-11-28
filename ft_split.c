@@ -6,97 +6,109 @@
 /*   By: gefaivre <gefaivre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 09:45:21 by gefaivre          #+#    #+#             */
-/*   Updated: 2020/11/25 09:45:26 by gefaivre         ###   ########.fr       */
+/*   Updated: 2020/11/28 11:38:49 by gefaivre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-static char
-	**ft_alloc_split(char const *s, char c)
+static char			**ft_malloc_error(char **tab)
 {
-	size_t	i;
-	char	**split;
-	size_t	total;
+	unsigned int	i;
 
 	i = 0;
-	total = 0;
-	while (s[i])
+	while (tab[i])
 	{
-		if (s[i] == c)
-			total++;
+		free(tab[i]);
 		i++;
 	}
-	split = (char**)malloc(sizeof(s) * (total + 2));
-	if (!split)
-		return (NULL);
-	return (split);
-}
-
-void
-	*ft_free_all_split_alloc(char **split, size_t elts)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < elts)
-	{
-		free(split[i]);
-		i++;
-	}
-	free(split);
+	free(tab);
 	return (NULL);
 }
 
-static void
-	*ft_split_range(char **split, char const *s,
-		t_split_next *st, t_split_next *lt)
+static unsigned int	ft_get_nb_of_str(char const *str, char c)
 {
-	split[lt->length] = ft_substr(s, st->start, st->length);
-	if (!split[lt->length])
-		return (ft_free_all_split_alloc(split, lt->length));
-	lt->length++;
-	return (split);
-}
-
-static void
-	*ft_split_by_char(char **split, char const *s, char c)
-{
-	size_t			i;
-	t_split_next	st;
-	t_split_next	lt;
+	unsigned int	i;
+	unsigned int	nb_of_str;
 
 	i = 0;
-	lt.length = 0;
-	lt.start = 0;
-	while (s[i])
+	if (!str[i])
+		return (0);
+	nb_of_str = 0;
+	while (str[i] && str[i] == c)
+		i++;
+	while (str[i])
 	{
-		if (s[i] == c)
-		{
-			st.start = lt.start;
-			st.length = (i - lt.start);
-			if (i > lt.start && !ft_split_range(split, s, &st, &lt))
-				return (NULL);
-			lt.start = i + 1;
-		}
+		if (str[i] == c && str[i + 1] != c)
+			nb_of_str++;
 		i++;
 	}
-	st.start = lt.start;
-	st.length = (i - lt.start);
-	if (i > lt.start && i > 0 && !ft_split_range(split, s, &st, &lt))
-		return (NULL);
-	split[lt.length] = 0;
-	return (split);
+/*	if (str[i - 1] != c)
+		nb_of_str++;*/
+	return (nb_of_str);
 }
 
-char
-	**ft_split(char const *s, char c)
+static void			ft_get_next_str(char **next_str, unsigned int *next_str_len,
+					char c)
 {
-	char	**split;
+	unsigned int i;
 
-	if (!(split = ft_alloc_split(s, c)))
-		return (NULL);
-	if (!ft_split_by_char(split, s, c))
-		return (NULL);
-	return (split);
+	*next_str += *next_str_len;
+	*next_str_len = 0;
+	i = 0;
+	while (**next_str && **next_str == c)
+		(*next_str)++;
+	while ((*next_str)[i])
+	{
+		if ((*next_str)[i] == c)
+			return ;
+		(*next_str_len)++;
+		i++;
+	}
 }
+
+char				**ft_split(char const *s, char c)
+{
+	unsigned int	i;
+	unsigned int	next_str_len;
+	unsigned int	nb_of_str;
+
+	char			**tab;
+	char			*next_str;
+
+	if (!s)
+		return (NULL);
+	nb_of_str = ft_get_nb_of_str(s, c);
+	if (!(tab = (char **)malloc(sizeof(char *) * (nb_of_str + 1))))
+		return (NULL);
+	i = 0;
+	next_str = (char *)s;
+	next_str_len = 0;
+	while (i < nb_of_str)
+	{
+		ft_get_next_str(&next_str, &next_str_len, c);
+		if (!(tab[i] = (char *)malloc(sizeof(char) * (next_str_len + 1))))
+			return (ft_malloc_error(tab));
+		ft_strlcpy(tab[i], next_str, next_str_len + 1);
+		i++;
+	}
+	tab[i] = NULL;
+	return (tab);
+}
+
+int main(int ac, char **av)
+{
+	if (ac != 3)
+		return (0);
+	unsigned int i = 0;
+	printf("[%s]\n",av[1]);
+	printf("ft_nbr_of_str = [%i]\n",ft_get_nb_of_str(av[1], av[2][0]));
+	while (i <= ft_get_nb_of_str(av[1], av[2][0]))
+	{
+		printf("{%i} = [%s]\n", i, ft_split(av[1], av[2][0])[i]);
+		i++;
+	}
+}
+
+
