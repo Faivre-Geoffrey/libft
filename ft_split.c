@@ -6,12 +6,11 @@
 /*   By: gefaivre <gefaivre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 09:45:21 by gefaivre          #+#    #+#             */
-/*   Updated: 2020/11/28 11:38:49 by gefaivre         ###   ########.fr       */
+/*   Updated: 2020/11/30 11:54:37 by gefaivre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static char			**ft_malloc_error(char **tab)
 {
@@ -44,8 +43,8 @@ static unsigned int	ft_get_nb_of_str(char const *str, char c)
 			nb_of_str++;
 		i++;
 	}
-/*	if (str[i - 1] != c)
-		nb_of_str++;*/
+	if (str[i - 1] != c)
+		nb_of_str++;
 	return (nb_of_str);
 }
 
@@ -73,7 +72,6 @@ char				**ft_split(char const *s, char c)
 	unsigned int	i;
 	unsigned int	next_str_len;
 	unsigned int	nb_of_str;
-
 	char			**tab;
 	char			*next_str;
 
@@ -96,19 +94,3 @@ char				**ft_split(char const *s, char c)
 	tab[i] = NULL;
 	return (tab);
 }
-
-int main(int ac, char **av)
-{
-	if (ac != 3)
-		return (0);
-	unsigned int i = 0;
-	printf("[%s]\n",av[1]);
-	printf("ft_nbr_of_str = [%i]\n",ft_get_nb_of_str(av[1], av[2][0]));
-	while (i <= ft_get_nb_of_str(av[1], av[2][0]))
-	{
-		printf("{%i} = [%s]\n", i, ft_split(av[1], av[2][0])[i]);
-		i++;
-	}
-}
-
-

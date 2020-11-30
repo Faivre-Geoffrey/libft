@@ -6,27 +6,28 @@
 /*   By: gefaivre <gefaivre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 09:48:32 by gefaivre          #+#    #+#             */
-/*   Updated: 2020/11/25 09:48:37 by gefaivre         ###   ########.fr       */
+/*   Updated: 2020/11/29 14:47:52 by gefaivre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int
-	ft_abs(int nbr)
+static int	ft_positivator(int nb)
 {
-	return ((nbr < 0) ? -nbr : nbr);
+	if (nb < 0)
+		return (-nb);
+	else
+		return (nb);
 }
 
-static void
-	ft_strrev(char *str)
+static void	ft_strrev(char *str)
 {
-	size_t	length;
 	size_t	i;
+	size_t	length;
 	char	tmp;
 
-	length = ft_strlen(str);
 	i = 0;
+	length = ft_strlen(str);
 	while (i < length / 2)
 	{
 		tmp = str[i];
@@ -36,26 +37,25 @@ static void
 	}
 }
 
-char
-	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	char	*str;
-	int		is_neg;
-	size_t	length;
+	int		neg;
+	size_t	i;
 
-	is_neg = (n < 0);
-	if (!(str = ft_calloc(11 + is_neg, sizeof(*str))))
+	if (!(str = ft_calloc(12, sizeof(*str))))
 		return (NULL);
 	if (n == 0)
 		str[0] = '0';
-	length = 0;
+	neg = (n < 0);
+	i = 0;
 	while (n != 0)
 	{
-		str[length++] = '0' + ft_abs(n % 10);
+		str[i++] = '0' + ft_positivator(n % 10);
 		n = (n / 10);
 	}
-	if (is_neg)
-		str[length] = '-';
+	if (neg)
+		str[i] = '-';
 	ft_strrev(str);
 	return (str);
 }

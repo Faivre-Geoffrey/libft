@@ -6,7 +6,7 @@
 /*   By: gefaivre <gefaivre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 09:49:41 by gefaivre          #+#    #+#             */
-/*   Updated: 2020/11/25 09:52:28 by gefaivre         ###   ########.fr       */
+/*   Updated: 2020/11/29 15:00:59 by gefaivre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*str;
 	size_t	i;
+	char	*str;
 
 	if (!(str = ft_strdup(s)))
 		return (NULL);

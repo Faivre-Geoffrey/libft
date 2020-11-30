@@ -6,7 +6,7 @@
 /*   By: gefaivre <gefaivre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 11:04:30 by gefaivre          #+#    #+#             */
-/*   Updated: 2020/11/28 09:18:08 by gefaivre         ###   ########.fr       */
+/*   Updated: 2020/11/28 16:22:17 by gefaivre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_atoi(const char *str)
 			str[i] == '\f' || str[i] == '\r' || str[i] == ' ')
 		i++;
 	neg = 1;
-	if (str[i] = '-')
+	if (str[i] == '-')
 		neg = -1;
 	if (neg == -1 || str[i] == '+')
 		i++;
