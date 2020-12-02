@@ -6,7 +6,7 @@
 #    By: gefaivre <gefaivre@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/28 08:50:15 by gefaivre          #+#    #+#              #
-#    Updated: 2020/11/28 08:52:35 by gefaivre         ###   ########.fr        #
+#    Updated: 2020/12/01 10:49:02 by gefaivre         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,8 +30,6 @@ BONUS			=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
 
 OBJS			= $(SRCS:.c=.o)
 
-BONUS_OBJS		= $(BONUS:.c=.o)
-
 CC				= gcc
 RM				= rm -rf
 CFLAGS			= -Wall -Wextra -Werror
@@ -43,9 +41,6 @@ all:			$(NAME)
 $(NAME):		$(OBJS)
 				ar rcs $(NAME) $(OBJS)
 
-bonus:			$(OBJS) $(BONUS_OBJS)
-				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
-
 clean:
 				$(RM) $(OBJS) $(BONUS_OBJS)
 
@@ -54,5 +49,5 @@ fclean:			clean
 
 re:			fclean $(NAME)
 
-.PHONY:			all clean fclean re bonus
+.PHONY:			all clean fclean re so
 
